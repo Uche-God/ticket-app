@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Ticket App</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <button id="logout" class="btn">Logout</button>
+  </header>
+
+  <section class="stats">
+    <div class="card">Total Tickets: <span id="total-tickets">0</span></div>
+    <div class="card">Open Tickets: <span id="open-tickets">0</span></div>
+    <div class="card">Resolved Tickets: <span id="closed-tickets">0</span></div>
+  </section>
+
+  <section class="navigation">
+    <a href="./ticket-management.html" class="btn">Manage Tickets</a>
+  </section>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>
