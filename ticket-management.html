@@ -12,6 +12,7 @@
     <button id="logout" class="btn">Logout</button>
   </header>
 
+ <div class="container">
   <form id="ticket-form">
     <input type="text" id="ticket-title" placeholder="Title" required>
     <select id="ticket-status" required>
@@ -23,9 +24,8 @@
     <textarea id="ticket-desc" placeholder="Description (optional)"></textarea>
     <button type="submit" class="btn">Save Ticket</button>
   </form>
-
-  <div id="tickets-container"></div>
-
-  <script src="./ticket-management.js"></script>
+</div>
+ <div id="tickets-container"></div>
+<script src="./ticket-management.js"></script>
 </body>
 </html>
