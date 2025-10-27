@@ -146,3 +146,48 @@ form button {
   text-align: center;
   margin-top: 30px;
 }
+/* Ticket Management form */
+#ticket-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#tickets-container {
+  max-width: 800px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Ticket card */
+#tickets-container .card {
+  padding: 15px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Edit/Delete buttons inside ticket card */
+.edit-btn, .delete-btn {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-btn {
+  background-color: #ffc107; /* yellow */
+}
+
+.delete-btn {
+  background-color: #dc3545; /* red */
+  color: white;
+}
