@@ -7,14 +7,13 @@
 }
 
 /* Body */
-body {
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20px;
-}
+ body {
+      font-family: 'Sora', serif;
+      background: #8F73F2;
+      margin: 0;
+      padding: 0;
+      color: #20284B;
+    }
 
 /* Header */
 header {
@@ -184,7 +183,7 @@ form button {
 }
 
 .edit-btn {
-  background-color: #ffc107; /* yellow */
+  background-color: #DED9F6; /* yellow */
 }
 
 .delete-btn {
