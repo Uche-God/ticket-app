@@ -22,8 +22,7 @@ function renderTickets() {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <h3>${ticket.title}</h3>
-      <p>Status: <strong style="color:${ticket.status === 'open' ? 'green' : ticket.status === 'in_progress' ? 'orange' : 'gray'}">${ticket.status}</strong></p>
+      <h3>${ticket.title}</h3><p>Status: <strong class="status ${ticket.status}">${ticket.status}</strong></p>
       <p>${ticket.description || ""}</p>
       <button class="edit-btn" data-id="${ticket.id}">Edit</button>
       <button class="delete-btn" data-id="${ticket.id}">Delete</button>
