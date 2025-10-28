@@ -167,6 +167,21 @@ form input:focus, form select:focus, form textarea:focus {
 #tickets-container .card p {
   color: #333;
 }
+#tickets-container .card {
+  background-color: #fff8e1;     /* light yellow for tickets */
+  border: 2px solid #ffc107;     /* golden border */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#tickets-container .card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
 
 /* -------------------- Edit/Delete Buttons -------------------- */
 .edit-btn {
@@ -195,3 +210,43 @@ form input:focus, form select:focus, form textarea:focus {
   margin-bottom: 10px;
   font-weight: bold;
 }
+.edit-btn {
+  background-color: #ffc107;  /* yellow */
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background-color: #dc3545;  /* red */
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status.open { background-color: #d4edda; color: green; }
+.status.in_progress { background-color: #fff3cd; color: orange; }
+.status.closed { background-color: #e2e3e5; color: gray; }
