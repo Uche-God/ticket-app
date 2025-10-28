@@ -240,3 +240,27 @@ form button {
   background-color: #dc3545; /* red */
   color: white;
 }
+/* Ticket card text */
+#tickets-container .card h3,
+#tickets-container .card p {
+  color: #333;  /* Darker text for better contrast */
+}
+#ticket-form {
+  background-color: #ffffff;  /* Pure white for highest contrast */
+  color: #222;
+}
+/* Buttons hover effect */
+.btn, .edit-btn, .delete-btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .edit-btn:hover, .delete-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn:active, .edit-btn:active, .delete-btn:active {
+  transform: translateY(1px);
+  opacity: 0.8;
+}
+
