@@ -4,17 +4,18 @@ if (!localStorage.getItem("ticketapp_session")) {
   window.location.href = "./auth.html";
 }
 
-// Load tickets from localStorage
-let tickets = JSON.parse(localStorage.getItem("tickets") || "[]");
-let editingTicketId = null;
-
+// DOM elements
 const form = document.getElementById("ticket-form");
 const titleInput = document.getElementById("ticket-title");
 const statusInput = document.getElementById("ticket-status");
 const descInput = document.getElementById("ticket-desc");
 const container = document.getElementById("tickets-container");
 
-// Render tickets
+// Load tickets from localStorage
+let tickets = JSON.parse(localStorage.getItem("tickets") || "[]");
+let editingTicketId = null;
+
+// Render tickets function
 function renderTickets() {
   container.innerHTML = "";
   tickets.forEach(ticket => {
@@ -32,7 +33,7 @@ function renderTickets() {
   addCardListeners();
 }
 
-// Edit/Delete listeners
+// Add edit/delete listeners
 function addCardListeners() {
   document.querySelectorAll(".edit-btn").forEach(btn => {
     btn.addEventListener("click", e => {
@@ -62,9 +63,15 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   const title = titleInput.value.trim();
   const status = statusInput.value;
+
+  // Inline validation
   if (!title || !status) {
-    alert("Title and status are required!");
+    titleInput.style.border = "2px solid red";
+    statusInput.style.border = "2px solid red";
     return;
+  } else {
+    titleInput.style.border = "1px solid #ccc";
+    statusInput.style.border = "1px solid #ccc";
   }
 
   if (editingTicketId) {
@@ -86,18 +93,8 @@ form.addEventListener("submit", e => {
 // Logout button
 document.getElementById("logout").addEventListener("click", () => {
   localStorage.removeItem("ticketapp_session");
-  alert("Logged out!");
   window.location.href = "./auth.html";
 });
 
 // Initial render
 renderTickets();
-if (!title || !status) {
-  titleInput.style.border = "2px solid red";
-  statusInput.style.border = "2px solid red";
-  return;
-} else {
-  titleInput.style.border = "1px solid #ccc";
-  statusInput.style.border = "1px solid #ccc";
-}
-
