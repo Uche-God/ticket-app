@@ -1,22 +1,3 @@
-/* Ticket Form container */
-#ticket-form, .container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 25px;
-  border-radius: 15px;
-  background-color: #20284b;   /* Light grey background */
-  border: 2px solid #777;   /* Green border */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-.container {
-  max-width: 400px;            /* Width of the box */
-  margin: 50px auto;            /* Center horizontally */
-  padding: 30px;                /* Space inside the box */
-  border-radius: 15px;          /* Rounded corners */
-  background-color: #f0f8ff;    /* Light blue background (or any color you like) */
-  border: 2px solid #007bff;    /* Blue border around the box */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);  /* Soft shadow */
-}
 /* General resets */
 * {
   margin: 0;
@@ -25,14 +6,14 @@
   font-family: Arial, sans-serif;
 }
 
-/* Body */
- body {
-      font-family: 'Sora', serif;
-      background: #8F73F2;
-      margin: 0;
-      padding: 0;
-      color: #20284B;
-    }
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /* Header */
 header {
@@ -65,7 +46,6 @@ header h1 {
   margin-bottom: 30px;
 }
 
-/* Hero decorative circle */
 .hero::after {
   content: "";
   position: absolute;
@@ -88,18 +68,26 @@ header h1 {
   position: relative;
 }
 
-.btn {
+.btn, .edit-btn, .delete-btn {
   background-color: #007bff;
   color: white;
   padding: 12px 30px;
   text-decoration: none;
   border-radius: 10px;
   font-weight: bold;
-  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+.btn:hover, .edit-btn:hover, .delete-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn:active, .edit-btn:active, .delete-btn:active {
+  transform: translateY(1px);
+  opacity: 0.8;
 }
 
 /* Footer */
@@ -109,14 +97,16 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
-/* Form styles for auth.html */
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
+
+/* Forms & containers */
+.container, #ticket-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  border: 2px solid #007bff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .container h1 {
@@ -135,11 +125,14 @@ form input, form select, form textarea {
   border-radius: 8px;
   border: 1px solid #ccc;
   margin-bottom: 15px;
+  font-size: 1rem;
 }
 
-form button {
-  width: 100%;
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #007bff;
+  outline: none;
 }
+
 /* Dashboard stats */
 .stats {
   display: flex;
@@ -150,69 +143,19 @@ form button {
 }
 
 .card {
-  background: white;
+  background: #f9f9f9;
   padding: 20px;
   border-radius: 15px;
   flex: 1 1 200px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  font-size: 1.2rem;
+  border: 2px solid #28a745;
+  margin-bottom: 15px;
 }
 
-/* Navigation button section */
-.navigation {
-  text-align: center;
-  margin-top: 30px;
-}
-/* Ticket Management form */
-#ticket-form {
-  max-width: 600px;
-  margin: 20px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-#tickets-container {
-  max-width: 800px;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Ticket card */
 #tickets-container .card {
-  padding: 15px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  position: relative;
-}
-
-/* Edit/Delete buttons inside ticket card */
-.edit-btn, .delete-btn {
-  margin-right: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.edit-btn {
-  background-color: #DED9F6; /* yellow */
-}
-
-.delete-btn {
-  background-color: #dc3545; /* red */
-  color: white;
-}
-/* Ticket cards */
-#tickets-container .card {
-  background-color: #fff8e1;     /* Light yellow background */
-  border: 2px solid #ffc107;     /* Yellow border */
+  background-color: #fff8e1;     
+  border: 2px solid #ffc107;     
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -220,47 +163,18 @@ form button {
   position: relative;
 }
 
-/* Edit/Delete buttons inside ticket card */
-.edit-btn, .delete-btn {
-  margin-top: 10px;
-  margin-right: 10px;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+#tickets-container .card h3,
+#tickets-container .card p {
+  color: #333;
 }
 
+/* Edit/Delete buttons */
 .edit-btn {
-  background-color: #ffc107; /* yellow */
+  background-color: #ffc107;
   color: #000;
 }
 
 .delete-btn {
-  background-color: #dc3545; /* red */
+  background-color: #dc3545;
   color: white;
 }
-/* Ticket card text */
-#tickets-container .card h3,
-#tickets-container .card p {
-  color: #333;  /* Darker text for better contrast */
-}
-#ticket-form {
-  background-color: #ffffff;  /* Pure white for highest contrast */
-  color: #222;
-}
-/* Buttons hover effect */
-.btn, .edit-btn, .delete-btn {
-  transition: all 0.3s ease;
-}
-
-.btn:hover, .edit-btn:hover, .delete-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.btn:active, .edit-btn:active, .delete-btn:active {
-  transform: translateY(1px);
-  opacity: 0.8;
-}
-
