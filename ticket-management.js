@@ -114,9 +114,10 @@ form.addEventListener("submit", e => {
 
 // Logout button
 document.getElementById("logout").addEventListener("click", () => {
-  localStorage.removeItem("ticketapp_session");
-  window.location.href = "./auth.html";
+  if (confirm("Are you sure you want to logout?")) {
+    localStorage.removeItem("ticketapp_session");
+    window.location.href = "./auth.html";
+  }
 });
-
 // Initial render
 renderTickets();
