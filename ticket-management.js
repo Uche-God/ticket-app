@@ -63,6 +63,29 @@ form.addEventListener("submit", e => {
   const title = titleInput.value.trim();
   const status = statusInput.value;
 
+  // Remove previous error message if exists
+  const oldError = document.querySelector(".error-msg");
+  if (oldError) oldError.remove();
+
+  // Inline validation
+  if (!title || !status) {
+    titleInput.style.border = "2px solid red";
+    statusInput.style.border = "2px solid red";
+
+    const errorMsg = document.createElement("p");
+    errorMsg.textContent = "Title and Status are required!";
+    errorMsg.className = "error-msg";
+    form.appendChild(errorMsg);
+
+    return;
+  } else {
+    titleInput.style.border = "1px solid #ccc";
+    statusInput.style.border = "1px solid #ccc";
+  }
+
+  // Existing code for create/update tickets goes here...
+});
+
   // Inline validation
   if (!title || !status) {
     titleInput.style.border = "2px solid red";
