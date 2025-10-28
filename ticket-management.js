@@ -92,3 +92,12 @@ document.getElementById("logout").addEventListener("click", () => {
 
 // Initial render
 renderTickets();
+if (!title || !status) {
+  titleInput.style.border = "2px solid red";
+  statusInput.style.border = "2px solid red";
+  return;
+} else {
+  titleInput.style.border = "1px solid #ccc";
+  statusInput.style.border = "1px solid #ccc";
+}
+
