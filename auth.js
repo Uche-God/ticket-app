@@ -17,3 +17,11 @@ form.addEventListener("submit", e => {
     alert("Invalid username or password");
   }
 });
+if (username !== testUser.username || password !== testUser.password) {
+  const errorMsg = document.createElement("p");
+  errorMsg.textContent = "Invalid username or password";
+  errorMsg.style.color = "red";
+  form.appendChild(errorMsg);
+  setTimeout(() => errorMsg.remove(), 3000); // remove after 3 seconds
+  return;
+}
